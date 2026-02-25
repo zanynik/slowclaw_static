@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlowClaw - Slow Down. Reclaim the Internet.</title>
+    <meta name="description" content="SlowClaw is your personal AI agent for social curation. Sandboxed, secure, and focused on thoughtful content.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🐾</span> SlowClaw
+        </div>
+        <div class="nav-links">
+            <a href="#philosophy">Philosophy</a>
+            <a href="#features">Features</a>
+            <a href="#join" class="btn btn-outline">Join the Movement</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="badge fade-up">Beta Release is Coming</div>
+                <h1 class="fade-up" style="animation-delay: 0.1s;">Slow Down.<br><span class="gradient-text">Reclaim the Internet.</span></h1>
+                <p class="fade-up" style="animation-delay: 0.2s;">
+                    The web is flooded with endless slop and generic AI content. 
+                    <strong>SlowClaw</strong> is your personal, local-first AI agent that curates workflows, not just words.
+                </p>
+                <div class="hero-actions fade-up" style="animation-delay: 0.3s;">
+                    <a href="#philosophy" class="btn btn-primary">Discover How</a>
+                    <a href="https://github.com" target="_blank" class="btn btn-secondary">View Source</a>
+                </div>
+            </div>
+            <div class="hero-graphic fade-in" style="animation-delay: 0.4s;">
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <div class="panel-title">MySky Feed</div>
+                    </div>
+                    <div class="panel-body" id="feed-demo">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="philosophy" id="philosophy">
+            <h2 class="section-title">The Philosophy</h2>
+            <div class="comparison-grid">
+                <div class="card open-access">
+                    <h3>The <span class="highlight-red">All-Terrain</span> AI</h3>
+                    <p>Like OpenClaw, standard AI agents get root access. They do everything, but require constant handholding to get the context right. They generate noise.</p>
+                    <ul class="cross-list">
+                        <li>Cloud-dependent endpoints</li>
+                        <li>Unpredictable outputs</li>
+                        <li>Loss of personal voice</li>
+                    </ul>
+                </div>
+                <div class="card sandboxed">
+                    <h3>The <span class="highlight-green">City Car</span> AI</h3>
+                    <p>SlowClaw is sandboxed. It takes your raw thoughts (notes, audio, video) and carefully curates them into thoughtful workflows you approve.</p>
+                    <ul class="check-list">
+                        <li>Strict local sandbox</li>
+                        <li>Social UI (Like to Publish)</li>
+                        <li>Your Voice. Your Pace.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <h2 class="section-title">Built for the Mindful Creator</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Sandboxed & Secure</h3>
+                    <p>Your data stays on your device. Workflows are isolated scripts. Nothing gets published without your explicit consent via our Social UI.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile-First Hub</h3>
+                    <p>Your phone is the always-on data server. Sync with your laptop for heavy lifting, but review and approve content seamlessly on the go.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Community Skills</h3>
+                    <p>Like ZeroClaw, performance matters. Share and download local Rust-powered workflows. Let the community build the tools, you provide the ideas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="join">
+            <div class="cta-content glass-panel">
+                <h2>Ready to shape your digital space?</h2>
+                <p>Join the movement towards a thoughtful, personalized, and sane internet.</p>
+                <form class="waitlist-form" id="waitlist" onsubmit="event.preventDefault(); alert('Subscribed to updates! (Demo)');">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Get Updates</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <span class="logo-icon">🐾</span> SlowClaw.social
+            </div>
+            <p>Inspired by OpenClaw, ZeroClaw, and the need for a quieter web.</p>
+            <div class="social-links">
+                <a href="#">NOSTR</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
