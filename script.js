@@ -1,93 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Simulate dynamic feed items for the MySky mockup
-    const feedContainer = document.getElementById('feed-demo');
-    if (!feedContainer) return;
+  const runFeed = document.getElementById('runFeed');
 
-    const mockData = [
-        {
-            type: "Workflow Idea",
-            time: "2 mins ago",
-            content: "Based on your recent voice note about 'Infinite Canvas UIs', I generated a rough React prototype. Want me to refine it?"
-        },
-        {
-            type: "Draft Tweet",
-            time: "1 hour ago",
-            content: "Extracted from your journal: 'Local-first AI isn't just about privacy, it's about ownership of the mind.' — Should I post this?"
-        },
-        {
-            type: "Audio Processing",
-            time: "3 hours ago",
-            content: "I've cleaned up the background noise and generated a minimal video for your 5-minute audio ramble. Ready for review."
-        }
-    ];
+  // Terminal animation simulation
+  const ops = [
+    { label: '[AUDIO]', action: 'Transcribing 12m journal...', time: '1m ago', color: '#E35335' },
+    { label: '[VECTOR]', action: 'Updating personal interest graph', time: 'Just now', color: '#5E5BEC' },
+    { label: '[FEED]', action: 'Filtering 402 new Blue Sky posts', time: 'Processing', color: '#246B50' }
+  ];
 
-    function createFeedItem(data, index) {
-        const item = document.createElement('div');
-        item.className = 'feed-item';
-        
-        item.innerHTML = `
-            <div class="feed-item-header">
-                <span>${data.type}</span>
-                <span>${data.time}</span>
-            </div>
-            <div class="feed-item-content">
-                ${data.content}
-            </div>
-            <div class="feed-actions">
-                <button class="action-btn like" onclick="this.innerHTML='✓ Approved'; this.style.pointerEvents='none';">👍 Approve & Publish</button>
-                <button class="action-btn comment">💬 Tweak</button>
-                <button class="action-btn dislike">🗑️ Discard</button>
-            </div>
+  if (runFeed) {
+    ops.forEach((op, i) => {
+      setTimeout(() => {
+        const row = document.createElement('div');
+        row.className = 'run-item';
+        row.innerHTML = `
+          <div class="header">
+            <strong style="color: ${op.color}">${op.label}</strong>
+            <small>${op.time}</small>
+          </div>
+          <span>${op.action}</span>
         `;
-
-        return item;
-    }
-
-    // Stagger the loading of feed items
-    let delay = 500;
-    mockData.forEach((data, index) => {
-        setTimeout(() => {
-            const el = createFeedItem(data, index);
-            feedContainer.appendChild(el);
-            
-            // Trigger reflow to apply animation
-            void el.offsetWidth;
-            el.classList.add('visible');
-            
-            // Auto scroll to bottom smoothly
-            feedContainer.scrollTo({
-                top: feedContainer.scrollHeight,
-                behavior: 'smooth'
-            });
-            
-        }, delay);
-        delay += 1500; // Add new item every 1.5 seconds
+        runFeed.appendChild(row);
+      }, 800 + i * 1500); // Staggered entry for dramatic terminal effect
     });
+  }
 
-    // Handle scroll animations for other elements on the page
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+  // Scroll Reveal Observer
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
+  reveals.forEach((el, idx) => {
+    el.style.transitionDelay = `${(idx % 3) * 100}ms`;
+    io.observe(el);
+  });
+
+  // Smooth scroll for anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
         });
-    }, observerOptions);
-
-    // Grab elements that should fade in on scroll but don't have the immediate fade-up class
-    const scrollElements = document.querySelectorAll('.card, .feature-card, .section-title');
-    scrollElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease-out';
-        observer.observe(el);
+      }
     });
+  });
+
+  // Navbar blur effect on scroll
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.style.transform = 'translateY(-0.5rem)';
+    } else {
+      header.style.transform = 'translateY(0)';
+    }
+  });
 });
