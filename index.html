@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>slowclaw.social | Reclaim the Internet</title>
+  <title>slowclaw.social | Journal into Output</title>
   <meta name="description"
-    content="A revolutionary journaling and social media curation app. Journal in peace, let local AI curate your voice, and consume feeds aligned with your deep interests.">
+    content="SlowClaw turns private journals and transcripts into durable posts, clips, articles, and planner artifacts, then uses what you keep to shape a calmer, more personal feed.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -33,9 +33,10 @@
         <span>slowclaw.social</span>
       </a>
       <div class="nav-links">
-        <a href="#journaling">Journal</a>
-        <a href="#ai-curation">AI Output</a>
-        <a href="#feed">Consumption</a>
+        <a href="#journaling">Capture</a>
+        <a href="#ai-curation">Outputs</a>
+        <a href="#feed">Curation</a>
+        <a href="#showcase">Showcase</a>
       </div>
       <a class="btn btn-glass" href="https://github.com/zanynik/slowclaw.social" target="_blank"
         rel="noreferrer">Source</a>
@@ -45,22 +46,22 @@
   <main id="top">
     <section class="hero shell reveal">
       <div class="hero-copy">
-        <p class="eyebrow">The Internet Is Not Dead</p>
-        <h1>Reclaim your voice from the algorithm.</h1>
+        <p class="eyebrow">Private Journaling. Durable Output. Human Curation.</p>
+        <h1>Turn your journals into posts, clips, plans, and a feed that actually feels like yours.</h1>
         <p class="lede">
-          Half the world has something to say and can't. The other half has nothing to say and keeps saying it.
-          <strong>slowclaw.social</strong> is your private sanctuary to journal organically, let local AI refine your
-          thoughts, and consume social media on your own terms.
+          <strong>slowclaw.social</strong> is a local-first journaling and curation product. You dump thoughts in text,
+          audio, or video. SlowClaw turns that raw material into durable artifacts you can keep, edit, publish, or use
+          privately: short posts, blog drafts, article drafts, clip plans, todos, and events.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-accent" href="#journaling">Discover How</a>
+          <a class="btn btn-accent" href="#journaling">See the Flow</a>
           <a class="btn btn-outline" href="https://github.com/zanynik/slowclaw.social">View on GitHub</a>
         </div>
         <ul class="hero-chips" aria-label="Key features">
-          <li>Private Workspace</li>
-          <li>Local AI Models</li>
-          <li>Personalized Vectors</li>
-          <li>No Engagement Farming</li>
+          <li>Local-First Workspace</li>
+          <li>Artifact-First AI</li>
+          <li>Transcript-Aware Clips</li>
+          <li>Feed From What You Keep</li>
         </ul>
       </div>
 
@@ -71,14 +72,14 @@
           </div>
           <strong>workspace-agent</strong>
         </div>
-        <pre><code>$ slowclaw --status
+        <pre><code>$ slowclaw gateway
 
-[SYSTEM] Local AI models loaded
-[WORKSPACE] Secure private directory initialized
-[DATA] Vectorizing local journals...
-[INTEGRATION] Blue Sky feed connected
+[SYSTEM] Local workspace ready
+[JOURNALS] Reading text, audio, and transcript sidecars
+[OUTPUT] Writing posts, clip plans, todos, and events
+[FEED] Updating interest sources from kept artifacts
 
-Activating personalized experience...
+Artifact-first synthesis active...
 </code></pre>
         <div class="terminal-feed" id="runFeed" aria-live="polite"></div>
       </div>
@@ -86,11 +87,12 @@ Activating personalized experience...
 
     <section class="section shell reveal" id="journaling">
       <div class="section-head">
-        <p class="eyebrow">Phase 01: Input</p>
-        <h2>Journal in absolute peace.</h2>
+        <p class="eyebrow">Phase 01: Capture</p>
+        <h2>Journal first. Structure later.</h2>
       </div>
       <div class="feature-grid">
         <article class="card glass-card">
+          <img src="images/journal_dark.png" alt="SlowClaw Journal Interface" class="card-visual">
           <div class="icon-wrapper accent-gradient">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -103,12 +105,13 @@ Activating personalized experience...
           </div>
           <h3>Multimodal Logging</h3>
           <p>
-            Whether it's an audio brain dump, a quick video diary, or a long-form text rant. Get your raw, unfiltered
-            thoughts out.
+            Whether it's an audio brain dump, a quick video diary, or a long-form text rant. Capture your raw, unfiltered
+            thoughts exactly as they arrive.
           </p>
         </article>
 
         <article class="card glass-card">
+          <img src="images/audio_capture.png" alt="SlowClaw Audio Cature" class="card-visual">
           <div class="icon-wrapper accent-gradient">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -118,8 +121,8 @@ Activating personalized experience...
           </div>
           <h3>100% Private</h3>
           <p>
-            Everything is stored firmly on your laptop's workspace. No cloud syncs, no data scraping. Your thoughts are
-            yours alone.
+            Everything is stored firmly on your local workspace. No cloud syncs, no data scraping. Your thoughts are
+            yours alone, powered by local intelligence.
           </p>
         </article>
       </div>
@@ -128,30 +131,30 @@ Activating personalized experience...
     <section class="section shell reveal" id="ai-curation">
       <div class="section-head">
         <p class="eyebrow">Phase 02: Output</p>
-        <h2>Let AI package your genius.</h2>
-        <p class="section-desc">You shouldn't have to be a copywriter to be heard. We handle the packaging, keeping your
-          exact tone.</p>
+        <h2>Generate artifacts you can keep, not just AI summaries you forget.</h2>
+        <p class="section-desc">The core product output is durable artifacts: files under <code>posts/</code>, clip plans,
+          todos, events, and long-form drafts. AI helps package your raw material into formats you can actually use.</p>
       </div>
 
       <div class="split-cards">
         <article class="card glass-card highlight">
-          <h3>Effortless Content</h3>
+          <h3>Publishing Outputs</h3>
           <p>
-            Local AI models run over your journals to automatically generate tweet-style posts, long-form articles, and
-            edited video clips.
+            Turn journals into short posts, blog drafts, article drafts, ebook seeds, private essays, and transcript-aware
+            clip plans. Edit them if you want. Keep them if they matter. Publish only what represents you.
           </p>
           <ul class="feature-list">
-            <li>Preserves your unique speaking tone</li>
-            <li>Generates multiple format options</li>
-            <li>100% optional—you decide if and what to publish</li>
+            <li>Artifact-first generation instead of abstraction-first storage</li>
+            <li>Short posts can be tweet-style or simple personal insights</li>
+            <li>Articles and private writing live beside public drafts</li>
           </ul>
         </article>
 
         <article class="card glass-card">
-          <h3>Break the Silence</h3>
+          <h3>Planner Outputs</h3>
           <p>
-            Lower the barrier to entry for sharing meaningful insights. Replace the noise of engagement farmers with
-            real, profound human thoughts—yours.
+            When your journals contain commitments, follow-ups, or scheduling information, SlowClaw writes todos and
+            events into the app so the product is useful even when you are not trying to publish anything.
           </p>
         </article>
       </div>
@@ -159,8 +162,8 @@ Activating personalized experience...
 
     <section class="section shell reveal" id="feed">
       <div class="section-head">
-        <p class="eyebrow">Phase 03: Consumption</p>
-        <h2>Consume based on values, not virality.</h2>
+        <p class="eyebrow">Phase 03: Curation</p>
+        <h2>Curate from what you keep, not only from what you post.</h2>
       </div>
 
       <div class="steps dark-steps">
@@ -173,10 +176,10 @@ Activating personalized experience...
               </path>
             </svg>
           </div>
-          <h3>Personal Vectors</h3>
+          <h3>Kept Artifacts Become Signals</h3>
           <p>
-            The app vectorizes your private notes to deeply map your true interests—beyond surface-level clicks and
-            likes.
+            What stays in <code>posts/</code>, what you refine into articles, and what clip plans survive are strong
+            signals of what you actually care about, even if you never publish publicly.
           </p>
         </article>
 
@@ -187,10 +190,10 @@ Activating personalized experience...
               <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
             </svg>
           </div>
-          <h3>Connect Integrations</h3>
+          <h3>Open Social Inputs</h3>
           <p>
-            Link permissionless platforms like Blue Sky. Feed data streams directly to your local workspace for
-            processing.
+            Bring in sources like Bluesky and Nostr, then rank them against your private artifact history and journal-derived
+            interests instead of raw engagement farming.
           </p>
         </article>
 
@@ -208,12 +211,34 @@ Activating personalized experience...
               <line x1="17" y1="16" x2="23" y2="16"></line>
             </svg>
           </div>
-          <h3>Intelligent Filtering</h3>
+          <h3>Transcript Editing Superpower</h3>
           <p>
-            Your feed is curated by matching incoming content against your personal vectors. See what actually matters
-            to <em>you</em>.
+            Segments and timestamps let AI point to the interesting parts while deterministic tools do the actual cutting.
+            That makes long recordings easier to turn into clean, watchable clips.
           </p>
         </article>
+      </div>
+    </section>
+
+    <section class="section shell reveal" id="showcase">
+      <div class="section-head">
+        <p class="eyebrow">Interface Preview</p>
+        <h2>The SlowClaw Experience</h2>
+      </div>
+
+      <div class="showcase-grid">
+        <div class="screenshot-container">
+          <img src="images/feed_screen.png" alt="SlowClaw Feed Screen">
+          <div class="screenshot-caption">Curation feed ranking matches based on your private artifacts.</div>
+        </div>
+        <div class="screenshot-container">
+          <img src="images/video_capture.png" alt="SlowClaw Video Capture">
+          <div class="screenshot-caption">Native video capture with transcript generation.</div>
+        </div>
+        <div class="screenshot-container">
+          <img src="images/journal_light.png" alt="SlowClaw Light Mode">
+          <div class="screenshot-caption">Clean, minimal light mode for focused writing.</div>
+        </div>
       </div>
     </section>
 
@@ -227,7 +252,7 @@ Activating personalized experience...
         <article class="card glass-card">
           <h3>1. Prerequisites</h3>
           <p>Required: Rust toolchain (<code>rustc</code>, <code>cargo</code>)</p>
-          <p>Optional (for rebuilding the web UI): Node.js 18+</p>
+          <p>Optional: Node.js 18+ if you need to rebuild web assets</p>
         </article>
 
         <article class="card glass-card">
@@ -239,16 +264,18 @@ Activating personalized experience...
         <article class="card glass-card">
           <h3>3. Run</h3>
           <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px;"><code>./target/release/slowclaw gateway</code></pre>
-          <p>Or for full scheduling + chat worker runtime:</p>
+          <p>Or for scheduling + automation:</p>
           <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px;"><code>./target/release/slowclaw daemon</code></pre>
         </article>
 
         <article class="card glass-card highlight">
-          <h3>4. Coming Soon</h3>
-          <p>Native apps are currently in development to bring the full experience to your devices.</p>
+          <h3>4. Product Direction</h3>
+          <p>SlowClaw is not trying to be generic AI slop generation. The product loop is:</p>
           <ul class="feature-list">
-            <li>Mac OS desktop .dmg</li>
-            <li>iOS App</li>
+            <li>capture privately</li>
+            <li>generate durable artifacts</li>
+            <li>keep or publish selectively</li>
+            <li>curate the internet from what matters to you</li>
           </ul>
         </article>
       </div>
@@ -259,7 +286,7 @@ Activating personalized experience...
   <footer class="site-footer shell">
     <div>
       <p class="footer-brand">slowclaw.social</p>
-      <p class="footer-copy">Reclaiming the internet, one journal at a time.</p>
+      <p class="footer-copy">Private journals in. Durable artifacts out. Better feeds over time.</p>
     </div>
     <div class="footer-links">
       <a href="https://github.com/zanynik/slowclaw.social" target="_blank" rel="noreferrer">GitHub</a>

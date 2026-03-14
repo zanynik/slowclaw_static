@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const runFeed = document.getElementById('runFeed');
 
-  // Terminal animation simulation
   const ops = [
-    { label: '[AUDIO]', action: 'Transcribing 12m journal...', time: '1m ago', color: '#E35335' },
-    { label: '[VECTOR]', action: 'Updating personal interest graph', time: 'Just now', color: '#5E5BEC' },
-    { label: '[FEED]', action: 'Filtering 402 new Blue Sky posts', time: 'Processing', color: '#246B50' }
+    { label: '[TRANSCRIPT]', action: 'Syncing transcript sidecars for new audio journals', time: '2m ago', color: '#E35335' },
+    { label: '[OUTPUT]', action: 'Writing 4 keepable insight drafts into posts/', time: 'Just now', color: '#5E5BEC' },
+    { label: '[CURATION]', action: 'Refreshing interest signals from kept artifacts and incoming feed sources', time: 'Processing', color: '#246B50' }
   ];
 
   if (runFeed) {
@@ -21,11 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <span>${op.action}</span>
         `;
         runFeed.appendChild(row);
-      }, 800 + i * 1500); // Staggered entry for dramatic terminal effect
+      }, 800 + i * 1500);
     });
   }
 
-  // Scroll Reveal Observer
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -41,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     io.observe(el);
   });
 
-  // Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -54,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Navbar blur effect on scroll
   const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
