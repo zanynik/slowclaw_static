@@ -49,6 +49,7 @@ jobs:
           pnpm typecheck
           pnpm test
           pnpm build
+          node tests/signaling-live.mjs "$SIGNALING_ORIGIN"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload existing landing page
